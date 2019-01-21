@@ -1,1 +1,1 @@
-from ast import *
+from .ast import *

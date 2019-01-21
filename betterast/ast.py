@@ -22,7 +22,7 @@ def build_tree(gen):
         if children:
             stack.append({'node':node, 'children':children})
     if stack:
-        raise SyntaxError, 'Malformed input'
+        raise SyntaxError('Malformed input')
     return root
 
 class Node(object):
@@ -51,7 +51,7 @@ class Node(object):
     def __eq__(self, other):
         if not isinstance(other, Node):
             return False
-        for a, b in itertools.izip(self, other):
+        for a, b in zip(self, other):
             if isinstance(a, Node) and isinstance(b, Node):
                 if a.label != b.label:
                     return False
